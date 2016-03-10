@@ -1,0 +1,254 @@
+/* -----------------------------------------
+
+yellow: #fbd334
+
+light grey: #f6f6f6
+
+text: #222;
+
+grey background: #ececec;
+
+-------------------------------------------- */
+@font-face {
+  font-family: "PFDinTextCompProBold";
+  src: url("../fonts/PFDinTextCompPro-Bold.ttf")  format("truetype"); /* Safari, Android, iOS */
+}
+
+/* -----------------------------------------
+Helpers
+-------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+/* -----------------------------------------
+Global
+-------------------------------------------- */
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 96px 32px;
+  padding: 0 6rem 2rem;
+  color: #222;
+  margin: 0;
+  background-color: #fbd334;
+}
+
+li {
+  margin-bottom: .5rem;
+  font-size: .95rem;
+}
+
+ul {
+  list-style: none;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  margin-top: 0;
+}
+
+li:before {
+  content: "";
+  border-color: transparent #c3c3c3;
+  border-style: solid;
+  border-width: 0.25em 0 0.25em 0.35em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: .95em;
+  position: relative;
+}
+
+section {
+  clear: both;
+}
+
+/* -----------------------------------------
+Type
+-------------------------------------------- */
+header {
+  background-color: #ececec;
+  margin: 0 -96px;
+  margin: 0 -6rem;
+  padding: 24px 96px;
+  padding: 1.5rem 6rem;
+}
+
+/* -----------------------------------------
+Type
+-------------------------------------------- */
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid #222;
+  padding-bottom: 1px;
+  color: #222;
+}
+
+h1 {
+  color: #222;
+  font-size: 64px;
+  font-size: 4rem;
+  font-family: "PFDinTextCompProBold", Impact, Arial;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  line-height: .9;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 48px;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  line-height: 1.2;
+  font-size: 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  letter-spacing: .03rem;
+}
+
+/* -----------------------------------------
+Buttons
+-------------------------------------------- */
+
+button {
+  margin-bottom: 3px;
+  padding: 16px 32px 16px;
+  padding: 1rem 2rem 1rem;
+  border: 0;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 3px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #fff;
+  background-color: #fa4542;
+  box-shadow: 0 3px 0 0 #be0201;
+}
+
+/* -----------------------------------------
+Lessons
+-------------------------------------------- */
+
+.lessons h3 {
+    font-weight: normal;
+    margin: 0;
+    padding: 20px 32px 20px 0;
+    padding: 1.25rem 2rem 1.25rem 0;
+    background: url("../images/caret.svg") no-repeat 98%;
+    text-align: left;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.lessons ul {
+  height: 0;
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+  overflow: hidden;
+  display: none;
+}
+
+.lessons li:before {
+  border-color: transparent #222;
+}
+
+.lesson:first-of-type {
+    border-top: 1px solid black;
+}
+
+.lesson:last-of-type {
+    border-bottom: none;
+}
+
+.lessons {
+  width: 60%;
+  float: left;
+  margin: 0 0 32px;
+  margin: 0 0 2rem;
+  background-color: #fbd334;
+  padding: 32px 0;
+  padding: 2rem 0;
+}
+
+.lesson {
+
+  border-bottom: 1px solid #f9c120;
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.active {
+  background-color: #f6f6f6;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+}
+
+
+.active ul {
+  height: 100%;
+  display: block;
+}
+
+
+.active h3 {
+  background: url("../images/caret-down.svg") no-repeat 98%;
+}
+
+/* -----------------------------------------
+Sidebar
+-------------------------------------------- */
+aside {
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  right: 6%;
+  top: 5%;
+  bottom: 5%;
+  background-color: #222;
+  border-radius: 4px;
+  color: #c3c3c3;
+  padding: 32px;
+  padding: 2rem;
+}
+
+aside h2 {
+  border-bottom: 2px solid black;
+  padding-bottom: 18px;
+}
+
+aside a {
+  color: white;
+  border-bottom-color: white;
+}
+
+@media only screen and (max-width: 990px) {
+  body {
+    padding: 0 3rem 2rem;
+  }
+
+  aside {
+    display: none;
+    width: 100%;
+    left: 5%;
+  }
+
+  .lessons {
+    width: 100%;
+  }
+}

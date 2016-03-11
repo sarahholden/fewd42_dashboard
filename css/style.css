@@ -38,11 +38,10 @@ Global
 -------------------------------------------- */
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: 0 96px 32px;
-  padding: 0 6rem 2rem;
+  padding: 0;
   color: #222;
   margin: 0;
-  background-color: #fbd334;
+  background-color: #ececec;
 }
 
 li {
@@ -59,7 +58,7 @@ ul {
 
 li:before {
   content: "";
-  border-color: transparent #c3c3c3;
+  border-color: transparent #222;
   border-style: solid;
   border-width: 0.25em 0 0.25em 0.35em;
   display: block;
@@ -74,16 +73,40 @@ section {
   clear: both;
 }
 
+.main-section {
+  padding-top: 2rem;
+}
+
+.main-section ul {
+  padding-bottom: 1rem;
+}
+
+.optional {
+  background-color: white;
+  margin: 2rem -6rem;
+  padding: 2rem 6rem;
+}
+
 /* -----------------------------------------
-Type
+Headerv
 -------------------------------------------- */
 header {
-  background-color: #ececec;
-  margin: 0 -96px;
-  margin: 0 -6rem;
+  margin: 0;
   padding: 24px 96px;
   padding: 1.5rem 6rem;
 }
+
+/* -----------------------------------------
+Footer
+-------------------------------------------- */
+footer {
+  color: #222;
+  background-color: #c3c3c3;
+  padding: .5rem 6rem;
+}
+
+
+
 
 /* -----------------------------------------
 Type
@@ -118,6 +141,10 @@ h2 {
   font-weight: 600;
   letter-spacing: 0px;
   letter-spacing: .03rem;
+}
+
+p {
+  line-height: 1.4;
 }
 
 /* -----------------------------------------
@@ -181,7 +208,6 @@ Lessons
   float: left;
   margin: 0 0 32px;
   margin: 0 0 2rem;
-  background-color: #fbd334;
   padding: 32px 0;
   padding: 2rem 0;
 }
@@ -236,6 +262,25 @@ aside a {
   color: white;
   border-bottom-color: white;
 }
+
+aside li:before {
+  border-color: transparent #c3c3c3;
+}
+
+/* -----------------------------------------
+Theme
+-------------------------------------------- */
+.highlight {
+  background-color: #fbd334;
+  padding: 1.5rem 6rem;
+}
+
+
+
+
+/* -----------------------------------------
+Media Queries
+-------------------------------------------- */
 
 @media only screen and (max-width: 990px) {
   body {

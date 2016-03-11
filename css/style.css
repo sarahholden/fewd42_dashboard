@@ -36,6 +36,10 @@ Helpers
 /* -----------------------------------------
 Global
 -------------------------------------------- */
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
@@ -47,6 +51,7 @@ body {
 li {
   margin-bottom: .5rem;
   font-size: .95rem;
+  line-height: 1.4;
 }
 
 ul {
@@ -71,6 +76,7 @@ li:before {
 
 section {
   clear: both;
+  padding: 1.5rem 6rem;
 }
 
 .main-section {
@@ -81,19 +87,17 @@ section {
   padding-bottom: 1rem;
 }
 
-.optional {
-  background-color: white;
-  margin: 2rem -6rem;
-  padding: 2rem 6rem;
-}
-
 /* -----------------------------------------
-Headerv
+Header
 -------------------------------------------- */
 header {
   margin: 0;
   padding: 24px 96px;
   padding: 1.5rem 6rem;
+}
+
+nav {
+  display: none;
 }
 
 /* -----------------------------------------
@@ -132,6 +136,10 @@ h1 {
   -webkit-font-smoothing: antialiased;
   margin-bottom: 48px;
   margin-bottom: 3rem;
+}
+
+h1 a {
+  border-bottom-width: 4px;
 }
 
 h2 {
@@ -251,6 +259,7 @@ aside {
   color: #c3c3c3;
   padding: 32px;
   padding: 2rem;
+  overflow: scroll;
 }
 
 aside h2 {
@@ -272,19 +281,43 @@ Theme
 -------------------------------------------- */
 .highlight {
   background-color: #fbd334;
-  padding: 1.5rem 6rem;
 }
 
+.light {
+  background-color: white;
+}
 
+.short {
+  min-height: 450px;
+}
 
 
 /* -----------------------------------------
 Media Queries
 -------------------------------------------- */
+@media only screen and (max-width: 1030px) {
+  .long-title {
+    font-size: 3rem;
+  }
+}
+
 
 @media only screen and (max-width: 990px) {
-  body {
-    padding: 0 3rem 2rem;
+
+  header, section, footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  aside {
+    width: 34%;
+    right: 2%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .long-title a {
+    display: none;
   }
 
   aside {
@@ -296,4 +329,22 @@ Media Queries
   .lessons {
     width: 100%;
   }
+
+}
+
+
+@media only screen and (max-width: 520px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  html {
+    font-size: 13px;
+  }
+
+  header, section, footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
 }

@@ -1,3 +1,3 @@
-$('.lesson h3').on('click', function () {
-	$(this).closest('.lesson').toggleClass('active');
+$('.expandable h3').on('click', function () {
+	$(this).closest('.expandable-item').toggleClass('active');
 });

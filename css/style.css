@@ -38,6 +38,8 @@ Global
 -------------------------------------------- */
 html {
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 body {
@@ -45,7 +47,8 @@ body {
   padding: 0;
   color: #222;
   margin: 0;
-  background-color: #ececec;
+  background-color: #f6f6f6;
+  height: 100%;
 }
 
 li {
@@ -56,9 +59,10 @@ li {
 
 ul {
   list-style: none;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
   padding-left: 1rem;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 li:before {
@@ -75,16 +79,19 @@ li:before {
 }
 
 section {
-  clear: both;
   padding: 1.5rem 6rem;
 }
 
 .main-section {
-  padding-top: 2rem;
+  padding: 2rem 0 0;
 }
 
 .main-section ul {
   padding-bottom: 1rem;
+}
+
+.lessons {
+  background-color: white;
 }
 
 /* -----------------------------------------
@@ -93,10 +100,16 @@ Header
 header {
   margin: 0;
   padding: 24px 96px;
-  padding: 1.5rem 6rem;
+  padding: 2.8rem 6rem;
+  border-top: 4px solid #fbd334;
+  background-color: white;
 }
 
-nav {
+.fa.hamburger {
+  position: absolute;
+  top: 3.2rem;
+  right: 2rem;
+  font-size: 1.65rem;
   display: none;
 }
 
@@ -107,7 +120,47 @@ footer {
   color: #222;
   background-color: #c3c3c3;
   padding: .5rem 6rem;
+  clear: both;
 }
+
+nav {
+  text-align: center;
+  padding: 1.25rem 0 .8rem;
+}
+
+nav li::before {
+  display: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0 1.5rem;
+}
+
+nav li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+}
+
+.selected,
+.lesson-links .selected {
+  transition: all .4s ease-in-out;
+  border-bottom: 2px solid #222;
+}
+
+
+.current {
+  background-color: #dfdfdf;
+}
+
+.lesson-links {
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+
+
 
 
 
@@ -125,17 +178,16 @@ a {
 
 h1 {
   color: #222;
-  font-size: 64px;
-  font-size: 4rem;
-  font-family: "PFDinTextCompProBold", Impact, Arial;
+  font-size: 30px;
+  font-size: 2rem;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  margin-bottom: 1rem;
+  text-align: center;
   line-height: .9;
-  font-weight: normal;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
-  margin-bottom: 48px;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 0.01em;
 }
 
 h1 a {
@@ -145,14 +197,19 @@ h1 a {
 h2 {
   line-height: 1.2;
   font-size: 18px;
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: .95rem;
+  font-weight: 700;
   letter-spacing: 0px;
   letter-spacing: .03rem;
+  text-transform: uppercase;
 }
 
 p {
   line-height: 1.4;
+}
+
+h3 {
+  margin-top: 0;
 }
 
 /* -----------------------------------------
@@ -178,12 +235,10 @@ button {
 Expandable Lists
 -------------------------------------------- */
 
-.expandable h3 {
-    font-weight: normal;
+.expandable h2 {
     margin: 0;
-    padding: 20px 32px 20px 0;
-    padding: 1.25rem 2rem 1.25rem 0;
-    background: url("../images/caret.svg") no-repeat 98%;
+    padding: 0 32px 20px 0;
+    padding: 0 2rem 1.25rem 0;
     text-align: left;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
@@ -191,34 +246,38 @@ Expandable Lists
     font-size: .95rem;
 }
 
-.expandable-item > ul,
-.expandable-item > .milestone {
-  height: 0;
-  -webkit-transition: all .2s ease-in-out;
-          transition: all .2s ease-in-out;
-  overflow: hidden;
-  display: none;
-}
-
-.expandable li:before {
-  border-color: transparent #222;
-}
-
-.expandable-item:first-of-type {
-    border-top: 1px solid black;
-}
-
-.expandable-item:last-of-type {
-    border-bottom: none;
-}
-
 .expandable {
-  width: 60%;
+  width: 80%;
   float: left;
   margin: 0 0 32px;
   margin: 0 0 2.5rem;
-  padding: 32px 0 0;
-  padding: 1.5rem 0 0;
+  padding: 0 0 0;
+  padding: 0 3rem 0 3rem;
+}
+
+.expandable nav {
+  background-color: #f6f6f6;
+}
+
+.lesson-links li {
+  display: block;
+  float: left;
+  width: 33%;
+  margin-bottom: 0;
+}
+
+.lesson-links a {
+  padding: 1rem .5rem;
+  width: 100%;
+  display: block;
+}
+
+.intro {
+  background-color: #ececec;
+}
+
+.intro li {
+  display: inline-block;
 }
 
 .milestones {
@@ -227,59 +286,68 @@ Expandable Lists
 }
 
 .expandable-item {
-  border-bottom: 1px solid #f9c120;
-  -webkit-transition: all .2s ease-in-out;
-          transition: all .2s ease-in-out;
+  display: none;
 }
 
 .active {
-  background-color: #f6f6f6;
-  padding-left: 24px;
-  padding-left: 1.5rem;
-}
-
-
-.active > ul,
-.active > .milestone {
-  height: 100%;
   display: block;
 }
 
-
-.active h3 {
-  background: url("../images/caret-down.svg") no-repeat 98%;
+.reminders {
+  background-color: white;
+  border-radius: 4px;
+  padding: .6rem 1rem .2rem;
+  margin: 0 -1rem 1.5rem;
+  border: 2px solid #dfdfdf;
 }
 
 /* -----------------------------------------
 Sidebar
 -------------------------------------------- */
 aside {
-  width: 30%;
-  position: fixed;
-  z-index: 1;
-  right: 6%;
-  top: 5%;
-  bottom: 5%;
-  background-color: #222;
-  border-radius: 4px;
-  color: #c3c3c3;
-  padding: 32px;
-  padding: 2rem;
-  overflow: scroll;
+  background-color: #f6f6f6;
+  width: 20%;
+  float: left;
+  height: 100%;
+  padding: 3rem 2rem;
 }
 
-aside h2 {
-  border-bottom: 2px solid black;
-  padding-bottom: 18px;
+aside ul {
+  padding-left: 0;
+  padding-bottom: .5rem;
 }
 
-aside a {
-  color: white;
-  border-bottom-color: white;
+aside li::before {
+  display: none;
 }
 
-aside li:before {
-  border-color: transparent #c3c3c3;
+aside li {
+  margin-bottom: 1rem;
+}
+
+.lesson-links a {
+  border-bottom: 2px solid transparent;
+}
+
+
+.lesson-links {
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+/* -----------------------------------------
+Grid
+-------------------------------------------- */
+.col-6 {
+  width: 50%;
+  float: left;
+  padding-left: 2rem;
+}
+
+.col-6:first-of-type {
+  text-align: right;
+  padding-right: 2rem;
+  padding-left: 0;
+  border-right: 2px solid #222;
 }
 
 /* -----------------------------------------
@@ -301,48 +369,68 @@ Theme
 /* -----------------------------------------
 Media Queries
 -------------------------------------------- */
-@media only screen and (max-width: 1030px) {
-  .long-title {
-    font-size: 3rem;
-  }
-}
 
 
 @media only screen and (max-width: 990px) {
+
 
   header, section, footer {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-
-  aside {
-    width: 34%;
-    right: 2%;
-  }
 }
 
-@media only screen and (max-width: 760px) {
-  .long-title a {
-    display: none;
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 14px;
   }
 
-  aside {
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  .long-title a {
     display: none;
-    width: 100%;
-    left: 5%;
   }
 
   .expandable {
     width: 100%;
   }
 
+  .fa.hamburger {
+    display: block;
+  }
+
+  aside {
+    top: 8rem;
+    position: absolute;
+    max-height: 0;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
+    padding: 0 1rem;
+    height: auto;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .open {
+    max-height: 1000px;
+  }
+
+  aside div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .reminders {
+    display: none;
+  }
+
 }
 
 
 @media only screen and (max-width: 520px) {
-  h1 {
-    font-size: 3rem;
-  }
 
   html {
     font-size: 13px;
@@ -351,6 +439,10 @@ Media Queries
   header, section, footer {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  h1 span {
+    display: none;
   }
   
 }

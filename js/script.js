@@ -1,3 +1,16 @@
-$('.expandable h3').on('click', function () {
-	$(this).closest('.expandable-item').toggleClass('active');
+$('.hamburger').on('click', function (e) {
+	e.preventDefault();
+	$('aside').toggleClass('open');
+});
+
+$('.lesson-links a').on('click', function (e) {
+	e.preventDefault();
+
+	var panelToShow = $(this).data('lesson');
+
+	$('.lesson-links li').removeClass('current');
+	$(this).closest('li').addClass('current');
+
+	$('.lessons .expandable-item').fadeOut(200);
+	$('#' + panelToShow).delay(200).fadeIn(200);
 });

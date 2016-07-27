@@ -1,0 +1,114 @@
+html, body {
+    background: #DADADA;
+    padding: 20px;
+    padding-bottom: 0px;
+    color: #333;
+    font-family: 'Forum';
+    margin: 30px;
+}
+
+hr {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+hr:after {
+    content: "Zhamal   Zhanybek";
+    font-family: 'Monoton', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    display: inline-block;
+    position: relative;
+    top: -0.9em;
+    font-size: 2.5em;
+    padding: 0 0.3em;
+    background: #DADADA;
+}
+hr:hover {
+    color: #46BFBB; 
+    background-color:transparent;
+    text-decoration: none;
+}
+
+
+div {
+    border: 0px;
+    border-color: #FFFFFF;
+    display: block;
+}
+
+h2 {
+    text-align: relative;
+    font-weight: bold;
+    color: #46BFBB;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px;
+
+}
+
+p {
+    font-size: 16px;
+    font-style: italic;
+    color: #46BFBB;
+    padding: 0px;
+
+}
+
+#left, #right {
+    padding: 10px;
+    color: #333;
+}
+
+
+
+ul, li {
+    font-size: 14px;
+}
+
+a {
+    color: #818286;
+}
+
+footer {
+    clear: both;
+    display: none;
+
+}
+
+#footer {
+
+    position: absolute;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    line-height: 25px;
+    border-top: 5px solid #B8B8B8;
+    margin:none;
+}
+
+img[width="40"] {
+    border-color: #B8B8B8; 
+    border-style: double; 
+    border-radius: 50%;
+    border-width: 5px;
+}
+
+p.footer {
+    text-align: left;
+    font-family: 'Bad Script';
+}
+
+
+
+
+
+

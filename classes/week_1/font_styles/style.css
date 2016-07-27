@@ -1,0 +1,45 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 20px;
+	font-size: 15px;
+}
+
+
+p {
+	height: 100px;
+}
+
+h1, h2 {
+	display: inline-block;
+	font-weight: 300;
+	border-bottom: 2px solid #dfdfdf;
+	margin-bottom: .6em;
+	padding-bottom: .1em;
+}
+
+.col-4 {
+	width: 40%;
+	float: left;
+}
+
+.col-4:nth-of-type(-n+2) {
+	width: 27%;
+	margin-right: 3%;
+}
+
+@media screen and (max-width: 800px) {
+	.col-4,
+	.col-4:nth-of-type(-n+2) {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.col-4,
+	.col-4:nth-of-type(-n+2) {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+
